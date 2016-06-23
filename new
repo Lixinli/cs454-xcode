@@ -1,0 +1,40 @@
+
+import UIKit
+
+
+class ViewController: UIViewController {
+    
+
+    @IBOutlet weak var Recordinglable: UILabel!
+
+    @IBOutlet weak var StopRecording: UIButton!
+    @IBOutlet weak var Recording: UIButton!
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        StopRecording.enabled = false
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+
+    
+    @IBAction func record(sender: AnyObject) {
+        
+        Recordinglable.text = "Recording"
+        StopRecording.enabled = true
+        Recording.enabled = false
+    }
+    @IBAction func stopRecording(sender: AnyObject) {
+        Recordinglable.text = "not tapped"
+        StopRecording.enabled = false
+        Recording.enabled = true
+    
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        print("view")
+    }
+   }
+
